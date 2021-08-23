@@ -1,0 +1,48 @@
+.home{
+    width: 100vw;
+}
+.home_img{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+.illustration{
+    width: 80vw;
+    
+}
+.illustration img{
+    width: 160%;
+}
+.home_info{
+    padding: 40px 20px;
+    text-align: center;
+}
+.shorten_link{
+    background-image: url(../../assets/images/bg-shorten-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-color: black;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 40px 20px;
+
+}
+.shorten_input{
+    width: 100%;
+    border-radius: 5px !important;
+    height: 50px !important;
+    margin-bottom: 20px !important;
+}
+.shorten_btn{
+    width: 100%;
+    border-radius: 5px !important;
+    background-color: cyan !important;
+    height: 50px !important;
+}
+.advanced_statistics{
+    background-color: #aaa;
+    text-align: center;
+    padding: 40px 20px;
+    
+}
