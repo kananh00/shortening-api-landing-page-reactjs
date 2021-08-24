@@ -1,48 +1,166 @@
-.home{
-    width: 100vw;
-}
-.home_img{
+.home {
+  width: 100vw;
+  .home_img {
     width: 100vw;
     display: flex;
     justify-content: center;
     overflow: hidden;
-}
-.illustration{
-    width: 80vw;
-    
-}
-.illustration img{
-    width: 160%;
-}
-.home_info{
+    .illustration {
+      width: 80vw;
+    }
+    .illustration img {
+      width: 160%;
+    }
+  }
+  .home_info {
     padding: 40px 20px;
     text-align: center;
-}
-.shorten_link{
+    .info_text {
+      font-size: 18px;
+      font-weight: 500;
+      opacity: 70%;
+    }
+    .info_title {
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: -1.05px;
+      line-height: 48px;
+    }
+    .ant-btn-round {
+      height: 56px;
+      font-size: 20px;
+      font-weight: 700;
+      border-radius: 32px;
+      background-color: #2bd0d0;
+      border: none;
+      padding: 14px 40px 14px 40px;
+    }
+  }
+  .shorten_link {
+    position: relative;
     background-image: url(../../assets/images/bg-shorten-mobile.svg);
     background-repeat: no-repeat;
     background-position: top right;
-    background-color: black;
-    padding: 20px;
-    border-radius: 5px;
-    margin: 40px 20px;
+    background-color: #3a3054;
+    padding: 22px;
+    border-radius: 10px;
+    margin: 40px 20px 0 20px;
+    min-height: 160px;
+    .ant-input {
+      width: 100%;
+      border-radius: 5px;
+      height: 50px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 36px;
+      font-weight: 500;
+    }
+    .ant-btn {
+      width: 100%;
+      border-radius: 5px;
+      background-color: #2bd0d0;
+      height: 50px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .stored_link {
+      position: absolute;
+      background-color: #eff1f7;
+      top: -80px;
+      min-height: 100px;
+    }
+  }
 
-}
-.shorten_input{
-    width: 100%;
-    border-radius: 5px !important;
-    height: 50px !important;
-    margin-bottom: 20px !important;
-}
-.shorten_btn{
-    width: 100%;
-    border-radius: 5px !important;
-    background-color: cyan !important;
-    height: 50px !important;
-}
-.advanced_statistics{
-    background-color: #aaa;
+  .advanced_statistics {
+    background-color: #eff1f7;
     text-align: center;
-    padding: 40px 20px;
-    
+    padding: 120px 20px 40px 20px;
+    margin-top: -80px;
+    .adv_stats_text {
+      font-size: 16px;
+      letter-spacing: 0.11px;
+      line-height: 28px;
+      font-weight: 500;
+      margin-bottom: 16px;
+      opacity: 60%;
+    }
+    .adv_stats_title {
+      font-size: 28px;
+      letter-spacing: -0.7px;
+      line-height: 48px;
+      font-weight: 700;
+    }
+  }
+  .statistics {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .stats_img_wrapper {
+      background-color: #3a3054;
+      width: 88px;
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      margin-bottom: -44px;
+      z-index: 10000;
+    }
+    .stats_text_wrapper {
+      padding: 85px 20px 0 20px;
+      background-color: white;
+      border-radius: 5px;
+      position: relative;
+      .stats_title {
+        font-size: 22px;
+        font-weight: 700;
+      }
+      .stats_text {
+        font-size: 15px;
+        line-height: 26px;
+        opacity: 60%;
+      }
+    }
+    .with_line::before {
+      position: absolute;
+      content: "";
+      background-color: #2bd0d0;
+      margin: auto;
+      width: 8px;
+      height: 48px;
+      left: 0;
+      right: 0;
+      top: -92px;
+    }
+  }
+  .boost_link {
+    background-image: url("../../assets//images//bg-boost-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-color: #3a3054;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 300px;
+    .boost_title{
+        font-size: 28px;
+        line-height: 48px;
+        letter-spacing: -0.7px;
+        font-weight: 700;
+        color: white;
+    }
+    .ant-btn-round {
+        height: 56px;
+        font-size: 20px;
+        font-weight: 700;
+        border-radius: 32px;
+        background-color: #2bd0d0;
+        border: none;
+        padding: 14px 40px 14px 40px;
+      }
+  }
 }
