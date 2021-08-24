@@ -2,6 +2,7 @@ import { inject, observer } from "mobx-react";
 import React from "react";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import "./App.scss";
+import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/home/home";
 import AppStore from "./Store";
@@ -19,6 +20,7 @@ export default class App extends React.Component<{
           <Route exact path="/" component={HomePage} />
           <Route component={() => <Redirect to="/" />} />
         </Switch>
+        <Footer/>
       </BrowserRouter>
     );
   }
