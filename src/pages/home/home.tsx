@@ -1,21 +1,77 @@
 import { inject, observer } from "mobx-react";
-import React from "react";
+import React, { ChangeEvent } from "react";
 import http from "../../core/services/http";
 import "./home.scss";
 import AppStore from "../../Store";
 import illustrationWorking from "../../assets/images/illustration-working.svg";
 import PrimaryBtn from "../../components/PrimaryBtn/PrimaryBtn";
-import { Input, Button } from "antd";
+import ShorteningLinkService from "../../core/services/shortening-link.service";
+import { ShorteningLinkDto } from "../../core/interfaces/dtos/shorteningLink.dto";
+import { Input, Button, Modal } from "antd";
 import Statistics from "../../components/Statistics/Statistics";
 import recognition_icon from "../../assets/images/icon-brand-recognition.svg";
 import records_icon from "../../assets/images/icon-detailed-records.svg";
 import customizable_icon from "../../assets/images/icon-fully-customizable.svg";
+interface IState {
+  shortedLink?: ShorteningLinkDto;
+  givenLink: string;
+  btnClicked: boolean;
+  inputClass: string;
+  textClass: string;
+  isCopied: boolean;
+  copyBtnText: string;
+}
 @inject("appStore")
 @observer
 export default class HomePage extends React.Component<{
   appStore: AppStore;
 }> {
+  private shorteningLinkService: ShorteningLinkService =
+    new ShorteningLinkService();
+  state: IState = {
+    shortedLink: undefined,
+    givenLink: "",
+    btnClicked: false,
+    inputClass: "",
+    textClass: "",
+    isCopied: false,
+    copyBtnText: "Copy"
+  };
+  onShorten = () => {
+    this.setState({btnClicked: true})
+    if(this.state.givenLink){
+      this.getShortedLink(this.state.givenLink);
+    }
+    else{
+      this.setState({inputClass: "error_input"})
+      this.setState({textClass: "error_text"})
+    }
+  };
+  onCopied = () => {
+    this.setState({isCopied: true})
+    this.setState({copyBtnText: "Copied!"})
+    navigator.clipboard.writeText(`${this.state.shortedLink?.result.full_short_link}`)
+  }
+  private getShortedLink = async (givenLink: string) => {
+    try {
+      const shortedLink = await this.shorteningLinkService.getLink(givenLink);
+      this.setState({
+        shortedLink,
+      });
+    } catch (error) {
+      console.error(error);
+      Modal.error({
+        title: "The link is uncorrect, please write correct one!",
+      });
+    }
+  };
+  onChangeInputValue = (event: ChangeEvent<HTMLInputElement>) => {
+    this.setState({ givenLink: event.target.value });
+    console.log(event.target.value);
+  };
+
   render() {
+    const { shortedLink } = this.state;
     return (
       <div className="home">
         <div className="home_img">
@@ -38,16 +94,44 @@ export default class HomePage extends React.Component<{
             <div className="row justify-content-center align-items-center">
               <div className="col-12 p-0">
                 <Input
-                  className="shorten_input"
+                  className={`shorten_input ${this.state.btnClicked ? `${this.state.inputClass}` : ""}`}
                   placeholder="Shorten a link here..."
+                  onChange={this.onChangeInputValue}
                 />
               </div>
               <div className="col-12 p-0">
-                <Button className="shorten_btn" type="primary">
+                <i className = {`normal_error_text ${this.state.btnClicked ? `${this.state.textClass}` : " "}`}>
+                  Please add a link
+                </i>
+              </div>
+              <div className="col-12 p-0">
+                <Button
+                  className="shorten_btn"
+                  type="primary"
+                  onClick={this.onShorten}
+                >
                   Shorten it!
                 </Button>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="result">
+          <div
+            className={`shortened_link_wrapper ${
+              shortedLink?.result.full_short_link ? "showWrapper" : ""
+            }`}
+          >
+            <p className="result_link ">{shortedLink?.result.full_short_link}</p>
+            <hr className="shorted_link_divider_line" />
+            <p className="result_link colored_link">{shortedLink?.result.original_link}</p>
+            <Button
+              className={`shorten_btn ${this.state.isCopied ? "copied" : ""}`}
+              type="primary"
+              onClick={this.onCopied}
+            >
+              {this.state.copyBtnText}
+            </Button>
           </div>
         </div>
 

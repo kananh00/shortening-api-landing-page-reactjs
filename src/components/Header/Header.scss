@@ -1,6 +1,12 @@
-.header{
-    padding: 40px 20px;
-}
-.menu_icon{
+.header {
+  padding: 40px 20px;
+  position: relative;
+  .header_menu{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .menu_icon {
     text-align: right;
+  }
 }

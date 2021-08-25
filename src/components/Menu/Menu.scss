@@ -1,0 +1,41 @@
+.menu_visible{
+    position: absolute;
+}
+.menu_not_visible{
+    display: none;
+}
+.menu{
+    background-color: #3A3054;
+    height: 70vh;
+    width: 90%;
+    top: 90px;
+    z-index: 1;
+    padding: 48px 24px;
+    text-align: right;
+    border-radius: 10px;
+    height: 383px;
+    text-align: center;
+    .menu_link{
+        font-size: 18px;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 25px;
+    }
+    .menu_line{
+        width: 90%;
+        margin-bottom: 30px;
+        border-color: #9E9AA8;
+        opacity: 25%;
+    }
+    .menu_btn{
+        .ant-btn-round {
+            height: 48px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 32px;
+            background-color: #2bd0d0;
+            border: none;
+            width: 100%;
+          }
+    }
+}
