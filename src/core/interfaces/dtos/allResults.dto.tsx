@@ -1,5 +1,6 @@
 import { ResultsDto } from "./results.dto";
-export interface ShorteningLinkDto{
+import { CopiedLinkDto } from "./copiedLink.dto";
+export interface AllResultsDto{
     result: ResultsDto,
     isCopied: boolean,
     copyBtnText: string

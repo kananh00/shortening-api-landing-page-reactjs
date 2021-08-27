@@ -44,7 +44,8 @@
     background-color: #3a3054;
     padding: 22px;
     border-radius: 10px;
-    margin: 40px 20px 0 20px;
+    width: 90%;
+    margin: auto;
     min-height: 160px;
     .ant-input {
       width: 100%;
@@ -55,17 +56,17 @@
       line-height: 36px;
       font-weight: 500;
     }
-    .error_input{
+    .error_input {
       box-sizing: border-box;
       border: 2px solid red !important;
     }
-    .error_input::placeholder{
+    .error_input::placeholder {
       color: red !important;
     }
-    .normal_error_text{
+    .normal_error_text {
       display: none;
     }
-    .error_text{
+    .error_text {
       display: block;
       color: red;
       font-size: 12px;
@@ -83,7 +84,6 @@
       font-size: 18px;
       font-weight: 700;
     }
-    
   }
 
   .advanced_statistics {
@@ -188,31 +188,33 @@
     align-items: center;
     .shortened_link_wrapper {
       display: none;
-      width: 100%;
+      width: 90%;
       margin-left: 20px;
       margin-right: 20px;
       margin-top: 24px;
       padding: 16px;
       background-color: white;
       border-radius: 5px;
-      .shorted_link_divider_line{
-        border-color: #9E9AA8;
+      .shorted_link_divider_line {
+        border-color: #9e9aa8;
         opacity: 25%;
         margin: 0 -16px;
       }
-      .result_link{
+      .result_link {
         font-size: 16px;
         font-weight: 500;
         line-height: 36px;
         letter-spacing: 0.12px;
         margin-bottom: 10px;
       }
-      .colored_link{
-        color: #2BD0D0;
+      .colored_link {
+        color: #2bd0d0;
         margin-top: 10px;
+        text-overflow: ellipsis;
+        overflow: hidden;
       }
-      .copied{
-        background-color: #3A3054 !important;
+      .copied {
+        background-color: #3a3054 !important;
       }
       .ant-btn {
         width: 100%;
