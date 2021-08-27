@@ -9,4 +9,40 @@
   .menu_icon {
     text-align: right;
   }
+  .nav_bar{
+    display: flex;
+  }
+  .nav_link{
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    margin-left: 30px;
+    color: #9E9AA8;
+    cursor: pointer;
+  }
+  .nav_link:hover{
+    color: black;
+  }
+  .login_btn{
+    margin-bottom: 0;
+    font-size: 15px;
+    margin-right: 40px;
+  }
+  .ant-btn-round {
+    height: 40px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 28px;
+    background-color: #2bd0d0;
+    border: none;
+    padding: 0 25px;
+  }
+  .ant-btn-round:hover{
+    background-color: #9AE3E3;
+  }
+}
+@media (min-width: 1024px){
+  .header{
+    padding: 7vh 9vw;
+  }
 }

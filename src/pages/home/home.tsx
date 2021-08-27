@@ -4,7 +4,7 @@ import http from "../../core/services/http";
 import "./home.scss";
 import AppStore from "../../Store";
 import illustrationWorking from "../../assets/images/illustration-working.svg";
-import PrimaryBtn from "../../components/PrimaryBtn/PrimaryBtn";
+
 import ShorteningLinkService from "../../core/services/shortening-link.service";
 import { ShorteningLinkDto } from "../../core/interfaces/dtos/shorteningLink.dto";
 import { Input, Button, Modal } from "antd";
@@ -137,7 +137,7 @@ export default class HomePage extends React.Component<{
     const { shortedLink } = this.state;
     return (
       <div className="home">
-        <div className="home_img">
+        {/* <div className="home_img">
           <div className="illustration">
             <img src={illustrationWorking} alt="illustration working" />
           </div>
@@ -151,12 +151,36 @@ export default class HomePage extends React.Component<{
           <Button className="started_btn" type="primary" shape="round">
             Get Started
           </Button>
+        </div> */}
+        <div className="container-fluid p-0 mt-lg-4 mb-lg-4">
+          <div style={{margin: 0}} className="row">
+            <div className="col-12 col-lg-5 p-0 order-lg-2">
+              <div className="home_img">
+                <div className="illustration">
+                  <img src={illustrationWorking} alt="illustration working" />
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-lg-7 order-lg-1">
+              <div className="home_info">
+                <h1 className="info_title">More than just shorter links</h1>
+                <p className="info_text">
+                  Build your brand's recognition and get detailed insight on how
+                  your links are performing.
+                </p>
+                <Button className="started_btn" type="primary" shape="round">
+                  Get Started
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="shorten_link">
           <div className="container-fluid">
-            <div className="row justify-content-center align-items-center">
-              <div className="col-12 p-0">
-                <Input
+            <div className="row justify-content-center align-items-center align-items-lg-end">
+              <div className="col-12 col-lg-9 p-0 order-lg-1">
+                <div className="shorten_input">
+                  <Input
                   className={`shorten_input ${
                     this.state.btnClicked ? `${this.state.inputClass}` : ""
                   }`}
@@ -164,8 +188,10 @@ export default class HomePage extends React.Component<{
                   onChange={this.onChangeInputValue}
                   value={this.state.inputValue}
                 />
+                </div>
+                
               </div>
-              <div className="col-12 p-0">
+              <div className="col-12 order-lg-3 p-0">
                 <i
                   className={`normal_error_text ${
                     this.state.btnClicked ? `${this.state.textClass}` : " "
@@ -174,7 +200,7 @@ export default class HomePage extends React.Component<{
                   Please add a link
                 </i>
               </div>
-              <div className="col-12 p-0">
+              <div className="col-12 col-lg-3 p-0 order-lg-2">
                 <Button
                   className="shorten_btn"
                   type="primary"
@@ -208,7 +234,50 @@ export default class HomePage extends React.Component<{
         </div>
         ))} */}
 
+
+         {/* must write like this!!!!! */}
+         {/* {this.state.allResults.map((link: AllResultsDto, index: number) => (
+          <div className="result" key={index}>
+            <div
+              className={`shortened_link_wrapper ${
+                link.result?.full_short_link ? "showWrapper" : ""
+              }`}
+            >
+              <div className="container-fluid">
+                <div className="row">
+                  <div className="col-12 col-lg-7">
+                    <p className="result_link ">
+                      {link.result?.full_short_link}
+                    </p>
+                  </div>
+                  <div className="col-12 d-lg-none">
+                    <hr className="shorted_link_divider_line" />
+                  </div>
+                  <div className="col-12 col-lg-3">
+                    <p className="result_link colored_link">
+                      {link.result?.original_link}
+                    </p>
+                  </div>
+                  <div className="col-12 col-lg-2">
+                    <Button
+                      className={`shorten_btn ${link.isCopied ? "copied" : ""}`}
+                     
+                      type="primary"
+                      onClick={() =>
+                        this.onCopied(index, link.result?.full_short_link)
+                      }
                 
+                    >
+                      {link.copyBtnText ? link.copyBtnText : "Copy"}
+                     
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))} */}
+               
         {this.state.allResults.map((link: AllResultsDto, index:number)=> (
           <div className="result" key={index}>
           <div

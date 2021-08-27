@@ -47,7 +47,8 @@
     width: 90%;
     margin: auto;
     min-height: 160px;
-    .ant-input {
+    .shorten_input{
+       .ant-input {
       width: 100%;
       border: none;
       border-radius: 5px;
@@ -56,6 +57,8 @@
       line-height: 36px;
       font-weight: 500;
     }
+    }
+   
     .error_input {
       box-sizing: border-box;
       border: 2px solid red !important;
@@ -230,5 +233,131 @@
     .showWrapper {
       display: block;
     }
+  }
+}
+@media (min-width: 1024px){
+  .home{
+    .home_img {
+      width: 100%;
+      overflow: hidden;
+      .illustration {
+        width: 100%;
+      }
+      .illustration img {
+        width: 115%;
+      }
+    }
+    .home_info {
+      padding: 7vh 9vw;
+      text-align: left;
+      .info_text {
+        font-size: 22px;
+        line-height: 36px;
+        letter-spacing: 0.15px;
+        font-weight: 500;
+        opacity: 70%;
+      }
+      .info_title {
+        font-size: 65px;
+        letter-spacing: -2px;
+        line-height: 70px;
+      }
+      .ant-btn-round {
+        height: 56px;
+        font-size: 20px;
+        font-weight: 700;
+        border-radius: 32px;
+        background-color: #2bd0d0;
+        border: none;
+        padding: 14px 40px 14px 40px;
+      }
+    }
+    .shorten_link {
+      min-height: 150px;
+      display: flex;
+      align-items: center;
+      background-image: url('../../assets/images/bg-shorten-desktop.svg');
+      .shorten_input{
+        text-align: right;
+        .ant-input {
+        width: 90%;
+        text-align: left;
+        margin-right: 40px;
+        height: 60px;
+      }
+      }
+      .error_text {
+        font-size: 16px;
+        letter-spacing: 0.11px;
+        line-height: 18px;
+        margin-top: 5px;
+        margin-left: 5vw;
+      }
+      .ant-btn {
+        margin-top: 0;
+        width: 80%;
+        height: 60px;
+      }
+      .ant-btn:hover{
+        background-color: #9AE3E3;
+      }
+    }
+    // .advanced_statistics {
+    //   padding: 20vh 9vw;
+    //   margin-top: -75px;
+    //   .adv_stats_text {
+    //     font-size: 18px;
+    //     line-height: 32px;
+    //   }
+    //   .adv_stats_title {
+    //     font-size: 35px;
+    //     letter-spacing: -1px;
+    //   }
+    // }
+    // .result {
+    //   background-color: #eff1f7;
+    //   margin-top: -80px;
+    //   padding-top: 100px;
+    //   background-color: #eff1f7;
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    //   .shortened_link_wrapper {
+    //     display: none;
+    //     width: 90%;
+    //     margin-left: 20px;
+    //     margin-right: 20px;
+    //     margin-top: 24px;
+    //     padding: 16px;
+    //     background-color: white;
+    //     border-radius: 5px;
+    //     .shorted_link_divider_line {
+    //       display: none;
+    //     }
+    //     .result_link {
+    //       font-size: 16px;
+    //       font-weight: 500;
+    //       line-height: 36px;
+    //       letter-spacing: 0.12px;
+    //       margin-bottom: 10px;
+    //     }
+    //     .colored_link {
+    //       color: #2bd0d0;
+    //       margin-top: 10px;
+    //       text-overflow: ellipsis;
+    //       overflow: hidden;
+    //     }
+    //     .ant-btn {
+    //       width: 100%;
+    //       border-radius: 5px;
+    //       background-color: #2bd0d0;
+    //       height: 40px;
+    //       font-size: 16px;
+    //       font-weight: 700;
+    //       border: none;
+    //       outline: none;
+    //     }
+    //   }
+    // }
   }
 }
