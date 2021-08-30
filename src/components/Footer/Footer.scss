@@ -23,6 +23,10 @@
     font-weight: 500;
     opacity: 60%;
     letter-spacing: -0.23px;
+    cursor: pointer;
+  }
+  .footer_links_heading li:hover{
+    color: #2bd0d0;
   }
   .footer_links_heading ul {
     padding: 0;
