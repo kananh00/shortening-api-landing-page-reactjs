@@ -46,9 +46,7 @@ export default class Header extends Component {
               </div>
             </div>
             <div className="col-lg-3 d-none d-lg-flex align-items-center">
-              <p className="login_btn nav_link">
-                Login
-              </p>
+              <p className="login_btn nav_link">Login</p>
               <Button className="started_btn" type="primary" shape="round">
                 Sign Up
               </Button>

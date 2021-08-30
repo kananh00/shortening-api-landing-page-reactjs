@@ -1,14 +1,18 @@
 import React, { Component } from "react";
 import { Button } from "antd";
 import "./Menu.scss";
-interface IProps{
-    onMenuIconClick: React.MouseEventHandler<HTMLButtonElement>;
-    visible: boolean;
+interface IProps {
+  onMenuIconClick: React.MouseEventHandler<HTMLButtonElement>;
+  visible: boolean;
 }
 export default class Menu extends Component<IProps> {
   render() {
     return (
-      <div className={`menu ${this.props.visible ? "menu_visible" : "menu_not_visible"}`}>
+      <div
+        className={`menu ${
+          this.props.visible ? "menu_visible" : "menu_not_visible"
+        }`}
+      >
         <div className="container-fluid"></div>
         <div className="row">
           <div className="col-12">
