@@ -4,10 +4,9 @@ import "./ShortenForm.scss";
 
 interface IProps {
   onShorten: React.MouseEventHandler<HTMLButtonElement>;
-  handleShortenLinkValue: (givenLink: string, inputValue: string) => void;
+  handleShortenLinkValue: (givenLink: string) => void;
   btnClicked: boolean;
   inputClass: string;
-  inputValue: string;
   textClass: string;
 }
 interface IState {
@@ -18,7 +17,7 @@ export default class ShortenForm extends Component<IProps, IState> {
         inputValue: ""
     }
   onChangeInputValue = (event: ChangeEvent<HTMLInputElement>) => {
-    this.props.handleShortenLinkValue(event.target.value, event.target.value);
+    this.props.handleShortenLinkValue(event.target.value);
     this.setState({inputValue: event.target.value})
   };
   onFinish = () => {

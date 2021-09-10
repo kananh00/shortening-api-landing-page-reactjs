@@ -6,7 +6,7 @@ import Welcome from "../../components/Welcome/Welcome";
 import ShortenForm from "../../components/ShortenForm/ShortenForm";
 import Result from "../../components/Result/Result";
 import Statistic from "../../components/Statistic/Statistic";
-import BoostLink from "../../components/BoostLink/BoostLink"
+import BoostLink from "../../components/BoostLink/BoostLink";
 import ShorteningLinkService from "../../core/services/shortening-link.service";
 import { ShorteningLinkDto } from "../../core/interfaces/dtos/shorteningLink.dto";
 import { Modal } from "antd";
@@ -23,15 +23,13 @@ interface IState {
   textClass: string;
   isCopied: boolean;
   copyBtnText: string;
-  inputValue: string;
 }
 @inject("appStore")
 @observer
 export default class HomePage extends React.Component<{
   appStore: AppStore;
 }> {
-  private shorteningLinkService: ShorteningLinkService =
-    new ShorteningLinkService();
+  private shorteningLinkService: ShorteningLinkService = new ShorteningLinkService();
   state: IState = {
     shortedLink: undefined,
     allResults: [],
@@ -41,7 +39,6 @@ export default class HomePage extends React.Component<{
     textClass: "",
     isCopied: false,
     copyBtnText: "Copy",
-    inputValue: "",
   };
   public getShortenLink = (givenLink: string) => {
     this.setState({ givenLink });
@@ -56,33 +53,15 @@ export default class HomePage extends React.Component<{
     }
   };
   onCopied = (index: number, short_link: string) => {
-    // this.state.allResults.map(
-    //   (copied: CopiedLinkDto) => (copied.isCopied = false)
-    // );
-    // this.state.allResults.map(
-    //   (copied: CopiedLinkDto) => (copied.copyBtnText = "Copy")
-    // );
     const allResults = this.state.allResults;
-    // let resultIsCopied = allResults[index].isCopied;
-    // let resultCopyBtnText = allResults[index].copyBtnText;
-    // resultCopyBtnText = "Copied!";
-    // resultIsCopied = true;
     allResults.forEach((result) => {
       result.isCopied = false;
       result.copyBtnText = "Copy";
     });
     this.setState({ isCopied: true, copyBtnText: "Copied!", allResults });
 
-    console.log(
-      this.state.allResults[index].isCopied,
-      this.state.allResults[index].copyBtnText
-    );
     this.state.allResults[index].isCopied = true;
     this.state.allResults[index].copyBtnText = "Copied!";
-    console.log(
-      this.state.allResults[index].isCopied,
-      this.state.allResults[index].copyBtnText
-    );
 
     navigator.clipboard.writeText(`${short_link}`);
   };
@@ -104,10 +83,6 @@ export default class HomePage extends React.Component<{
     }
   };
 
-  // onChangeInputValue = (event: ChangeEvent<HTMLInputElement>) => {
-  //   this.setState({ givenLink: event.target.value, inputValue: event.target.value});
-  // };
-
   render() {
     return (
       <div className="home">
@@ -117,7 +92,6 @@ export default class HomePage extends React.Component<{
           handleShortenLinkValue={this.getShortenLink}
           btnClicked={this.state.btnClicked}
           inputClass={this.state.inputClass}
-          inputValue={this.state.inputValue}
           textClass={this.state.textClass}
         />
         <Result allResults={this.state.allResults} onCopied={this.onCopied} />
@@ -154,7 +128,7 @@ export default class HomePage extends React.Component<{
               </div>
               <div className="col-12 col-md-4">
                 <Statistic
-                line={true}
+                  line={true}
                   class="third_stat"
                   title="Fully Customizable"
                   text="Improve brand awareness and content discoverability
@@ -169,7 +143,7 @@ export default class HomePage extends React.Component<{
             <hr className="line" />
           </div>
         </div>
-        <BoostLink/>
+        <BoostLink />
       </div>
     );
   }
