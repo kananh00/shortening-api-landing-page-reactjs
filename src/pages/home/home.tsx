@@ -54,14 +54,19 @@ export default class HomePage extends React.Component<{
   };
   onCopied = (index: number, short_link: string) => {
     const allResults = this.state.allResults;
+    const singleResult = this.state.allResults[index];
     allResults.forEach((result) => {
       result.isCopied = false;
       result.copyBtnText = "Copy";
     });
-    this.setState({ isCopied: true, copyBtnText: "Copied!", allResults });
-
-    this.state.allResults[index].isCopied = true;
-    this.state.allResults[index].copyBtnText = "Copied!";
+    singleResult.copyBtnText = "Copied!";
+    singleResult.isCopied = true;
+    this.setState({
+      isCopied: true,
+      copyBtnText: "Copied!",
+      allResults,
+      singleResult,
+    });
 
     navigator.clipboard.writeText(`${short_link}`);
   };
