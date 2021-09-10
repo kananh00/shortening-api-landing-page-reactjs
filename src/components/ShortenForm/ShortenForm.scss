@@ -1,0 +1,88 @@
+.shorten_link {
+  position: relative;
+  background-image: url(../../assets/images/backgrounds/bg-shorten-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-color: #3a3054;
+  padding: 22px;
+  border-radius: 10px;
+  width: 90%;
+  margin: auto;
+  min-height: 160px;
+  .ant-form{
+      width: 100%;
+  }
+  .shorten_input {
+    .ant-input {
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      height: 50px;
+      font-size: 16px;
+      line-height: 36px;
+      font-weight: 500;
+    }
+  }
+
+  .error_input {
+    box-sizing: border-box;
+    border: 2px solid red !important;
+  }
+  .error_input::placeholder {
+    color: red !important;
+  }
+  .normal_error_text {
+    display: none;
+  }
+  .error_text {
+    display: block;
+    color: red;
+    font-size: 12px;
+    letter-spacing: 0.08px;
+    font-weight: 500;
+    line-height: 18px;
+  }
+  .ant-btn {
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    background-color: #2bd0d0;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+
+@media (min-width: 768px) {
+  .shorten_link {
+    min-height: 110px;
+    display: flex;
+    align-items: center;
+    background-image: url("../../assets/images/backgrounds/bg-shorten-desktop.svg");
+    .shorten_input {
+      text-align: right;
+      .ant-input {
+        width: 90%;
+        text-align: left;
+        margin-right: 40px;
+        height: 60px;
+      }
+    }
+    .error_text {
+      font-size: 16px;
+      letter-spacing: 0.11px;
+      line-height: 18px;
+      margin-top: 5px;
+      margin-left: 5vw;
+    }
+    .ant-btn {
+      margin-top: 0;
+      width: 80%;
+      height: 60px;
+    }
+    .ant-btn:hover {
+      background-color: #9ae3e3;
+    }
+  }
+}

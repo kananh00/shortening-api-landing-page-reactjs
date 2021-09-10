@@ -34,7 +34,7 @@
   .social_media {
     margin-top: 50px;
     .social_icon {
-      margin-left: 24px;
+      margin-left: 20px;
     }
     .social_icon:hover {
       filter: brightness(0.5) sepia(1) hue-rotate(140deg) saturate(6);
@@ -46,7 +46,7 @@
   }
 }
 
-@media (min-width: 1002px) {
+@media (min-width: 768px) {
   .footer {
     height: 310px;
     .footer_logo {

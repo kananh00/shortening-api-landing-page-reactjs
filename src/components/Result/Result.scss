@@ -1,0 +1,85 @@
+.result-component {
+  .result {
+    background-color: #eff1f7;
+    margin-top: -80px;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .shortened_link_wrapper {
+      display: none;
+      width: 90%;
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-top: 24px;
+      padding: 16px;
+      background-color: white;
+      border-radius: 5px;
+      .shorted_link_divider_line {
+        border-color: #9e9aa8;
+        opacity: 25%;
+      }
+      .result_link {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 36px;
+        letter-spacing: 0.12px;
+        margin-bottom: 10px;
+      }
+      .colored_link {
+        color: #2bd0d0;
+        margin-top: 10px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .original_link {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        margin-top: 10px;
+      }
+      .copied {
+        background-color: #3a3054 !important;
+      }
+      .ant-btn {
+        width: 100%;
+        border-radius: 5px;
+        background-color: #2bd0d0;
+        height: 40px;
+        font-size: 16px;
+        font-weight: 700;
+        border: none;
+        outline: none;
+      }
+      .ant-btn:hover {
+        background-color: #9ae3e3;
+      }
+    }
+    .showWrapper {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .result-component {
+    .result {
+      margin-top: -55px;
+      padding-top: 50px;
+      .shortened_link_wrapper {
+        .copy_btn {
+          height: 100%;
+          display: flex;
+          align-items: center;
+        }
+        .shorted_link_divider_line {
+          display: none;
+        }
+        .colored_link {
+          text-align: right;
+        }
+      }
+    }
+  }
+}

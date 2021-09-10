@@ -26,10 +26,10 @@ export default class Header extends Component {
         </div>
         <div className="container-fluid">
           <div className="row">
-            <div className="col col-lg-2 d-flex align-items-center">
+            <div className="col col-md-2 d-flex align-items-center">
               <img src={logo} alt="logo" />
             </div>
-            <div className="col d-lg-none">
+            <div className="col d-md-none">
               <div className="menu_icon">
                 <img
                   onClick={() => this.onMenuIconClick()}
@@ -38,14 +38,14 @@ export default class Header extends Component {
                 />
               </div>
             </div>
-            <div className="col-lg-7 d-none d-lg-flex align-items-center">
+            <div className="col-md-6 col-lg-7 d-none d-md-flex align-items-center">
               <div className="nav_bar">
                 <p className="nav_link">Features</p>
                 <p className="nav_link">Pricing</p>
                 <p className="nav_link">Resources</p>
               </div>
             </div>
-            <div className="col-lg-3 d-none d-lg-flex align-items-center">
+            <div className="col-md-4 col-lg-3 d-none d-md-flex align-items-center">
               <p className="login_btn nav_link">Login</p>
               <Button className="started_btn" type="primary" shape="round">
                 Sign Up
