@@ -9,11 +9,9 @@ export default class Header extends Component {
     menuIsVisible: false,
   };
   onMenuIconClick = () => {
-    if (this.state.menuIsVisible === false) {
-      this.setState({ menuIsVisible: true });
-    } else {
-      this.setState({ menuIsVisible: false });
-    }
+    this.setState({
+      menuIsVisible: !this.state.menuIsVisible
+    })
   };
   render() {
     return (
